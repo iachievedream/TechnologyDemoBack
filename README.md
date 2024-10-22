@@ -63,3 +63,22 @@ technologydemoback:專案資料夾名稱
 /todo：rount的名稱，以及接往 controller 的class 名稱
 
 /2：資料第二筆的 id
+
+## Swagger
+他的格式要求教嚴苛，
+所以有時執行第三個指令時，
+會不給通過，
+需要修改至完全正確才能產生出 swagger 的文件。
+
+~~~
+composer require darkaonline/l5-swagger
+
+php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
+
+# 每次更新程式碼，就需要重新執行一次
+php artisan l5-swagger:generate
+~~~
+
+進入查看網址
+http://technologydemoback.test/api/documentation
+
