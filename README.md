@@ -82,3 +82,46 @@ php artisan l5-swagger:generate
 進入查看網址
 http://technologydemoback.test/api/documentation
 
+## docker
+
+### 執行相關指令
+重新製作 docker image 與背景啟動，背景啟動執行，關閉，查看
+
+~~~
+docker-compose up --build -d
+docker-compose up -d
+docker-compose down
+docker ps     
+~~~
+
+### 查看全部 log 或單一 log
+all log and any one
+
+~~~
+docker-compose logs -f
+docker logs mysql-db
+~~~
+
+### 執行 container 當中的指令
+
+~~~
+docker exec -it php_container /bin/bash
+php artisan migrate
+exit
+
+上列三行指令合併為下列指令
+docker exec -it php_container php artisan migrate
+docker exec -it php_container php artisan migrate:refresh
+~~~
+
+<details>
+<summary>備註（死坑）：</summary>
+
+MySQL8 不能使用下列資料格式
+~~~
+DB_USERNAME=root
+DB_PASSWORD=
+~~~
+所以在 `.env` 當中需要修改
+
+</details>
