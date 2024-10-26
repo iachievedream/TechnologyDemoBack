@@ -125,3 +125,10 @@ DB_PASSWORD=
 所以在 `.env` 當中需要修改
 
 </details>
+
+## pint 程式碼格式工具
+
+~~~
+./vendor/bin/pint
+./vendor/bin/pint --test
+~~~
